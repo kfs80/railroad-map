@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top 30 Model Railroad Museums</title>
+  <!-- Load Leaflet styling -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { height: 100vh; width: 100vw; }
+    .popup-card h3 { margin: 0 0 5px 0; font-family: sans-serif; color: #2c4c3b; }
+    .popup-card p { margin: 0 0 10px 0; font-family: sans-serif; font-size: 14px; }
+    .popup-card a { color: #b75d3c; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  
+  <div id="map"></div>
+
+  <!-- Load Leaflet logic -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+  <script>
+    // 1. Initialize the map centered on the geographic center of the US
+    var map = L.map('map').setView([39.8283, -98.5795], 4);
+
+    // 2. Add the free visual map tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 3. YOUR DATA LIST (Edit this block to add, remove, or update museums)
+    var museums = [
+      {
+        name: "San Diego Model Railroad Museum",
+        lat: 32.7313,
+        lng: -117.1480,
+        desc: "27,000 sq. ft. of incredibly detailed HO and N scale layouts.",
+        link: "https://www.sdmrm.org"
+      },
+      {
+        name: "Colorado Model Railroad Museum",
+        lat: 40.4243,
+        lng: -104.6881,
+        desc: "5,500 sq. ft. masterpiece of scenic mountainous modeling.",
+        link: "https://www.cmrm.org"
+      },
+      {
+        name: "Museum of Science and Industry",
+        lat: 41.7905,
+        lng: -87.5830,
+        desc: "Home to 'The Great Train Story' depicting the Chicago to Seattle route.",
+        link: "https://www.msichicago.org"
+      }
+      // Copy and paste a block above to add the remaining 27 locations!
+    ];
+
+    // 4. Automatically generate a clickable pin for every item in your data list
+    museums.forEach(function(museum) {
+      var cardHTML = "<div class='popup-card'>" +
+                     "<h3>" + museum.name + "</h3>" +
+                     "<p>" + museum.desc + "</p>" +
+                     "<a href='" + museum.link + "' target='_blank'>Visit Website</a>" +
+                     "</div>";
+      
+      L.marker([museum.lat, museum.lng]).addTo(map).bindPopup(cardHTML);
+    });
+  </script>
+</body>
+</html>
