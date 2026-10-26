@@ -165,4 +165,42 @@
       { name: "Chi-Town Union Station", lat: 42.5694, lng: -83.4862, desc: "One of the world’s largest O-scale layouts, featuring over 10,000 feet of track and massive architecture.", link: "https://www.chi-townunionstation.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Chi-Town+Union" },
       { name: "National New York Central Railroad Museum", lat: 41.6818, lng: -85.9734, desc: "Houses detailed HO and O-scale layouts that recreate the bustling, historic rail yards of Elkhart.", link: "https://elkhartindiana.org/nnycrm/", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=NY+Central+Museum" },
       { name: "Western PA Model Railroad Museum", lat: 40.6300, lng: -79.9430, desc: "Dedicated to a sprawling, hyper-accurate HO-scale representation of the B&O rail line frozen in 1952.", link: "https://wpmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Western+PA+Museum" },
-      { name: "Medina Railroad Museum", lat: 43.2238, lng: -78.3846, desc: "Located inside a massive wooden freight depot boasting a colossal 2,040 sq. ft. HO-scale layout.", link: "
+      { name: "Medina Railroad Museum", lat: 43.2238, lng: -78.3846, desc: "Located inside a massive wooden freight depot boasting a colossal 2,040 sq. ft. HO-scale layout.", link: "https://medinarailroadmuseum.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Medina+Railroad" },
+      { name: "B&O Railroad Museum", lat: 39.2854, lng: -76.6327, desc: "Houses a massive HO-scale layout highlighting the engineering feats required to cross the Appalachians.", link: "https://www.borail.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=B%26O+Railroad" },
+      { name: "Wenham Museum", lat: 42.6074, lng: -70.8931, desc: "A staple of New England rail modeling featuring antique toy trains and intricate operating layouts.", link: "https://www.wenhammuseum.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Wenham+Museum" },
+      { name: "New Braunfels Railroad Museum", lat: 29.7042, lng: -98.1250, desc: "Features highly detailed HO and N-scale layouts alongside a viewing area for real-life Union Pacific trains.", link: "https://newbraunfelsrailroadmuseum.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=New+Braunfels" }
+    ];
+
+    var markers = [];
+    var sidebarContainer = document.getElementById('museum-list');
+
+    museums.forEach(function(museum, index) {
+      var popupHTML = "<div class='popup-card'>" +
+                      "<h3>" + museum.name + "</h3>" +
+                      "<p>" + museum.desc + "</p>" +
+                      "<a href='" + museum.link + "' target='_blank'>Visit Website &rarr;</a>" +
+                      "</div>";
+      
+      var marker = L.marker([museum.lat, museum.lng]).addTo(map).bindPopup(popupHTML);
+      markers.push(marker);
+
+      var cardHTML = `
+        <div class="museum-card" onclick="focusMap(${index})">
+          <img src="${museum.img}" alt="${museum.name}" class="card-img">
+          <div class="card-content">
+            <h3>${index + 1}. ${museum.name}</h3>
+            <p>${museum.desc}</p>
+          </div>
+        </div>
+      `;
+      sidebarContainer.innerHTML += cardHTML;
+    });
+
+    function focusMap(index) {
+      var targetMarker = markers[index];
+      map.setView(targetMarker.getLatLng(), 12); 
+      targetMarker.openPopup();
+    }
+  </script>
+</body>
+</html>
