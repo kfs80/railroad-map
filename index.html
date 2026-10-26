@@ -176,4 +176,19 @@
           </div>
           <div class="train-separator"></div>
           <div class="card-content">
-            <p>${museum.desc}</p
+            <p>${museum.desc}</p>
+            <a href="${museum.link}" target="_blank" class="card-link" onclick="event.stopPropagation()">Visit Website &rarr;</a>
+          </div>
+        </div>
+      `;
+      sidebarContainer.innerHTML += cardHTML;
+    });
+
+    function focusMap(index) {
+      var targetMarker = markers[index];
+      map.setView(targetMarker.getLatLng(), 12); 
+      targetMarker.openPopup();
+    }
+  </script>
+</body>
+</html>
