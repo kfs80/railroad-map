@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Great Model Railroad Database</title>
   
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   
   <style>
-    /* Global Styles matching your Travel file aesthetic */
     body {
       margin: 0;
       padding: 0;
@@ -21,7 +19,6 @@
       height: 100vh;
     }
 
-    /* Header Styling */
     header {
       background-color: #2c4c3b;
       color: white;
@@ -42,14 +39,12 @@
       font-size: 14px;
     }
 
-    /* Main Layout */
     .dashboard {
       display: flex;
       flex: 1;
       overflow: hidden;
     }
 
-    /* Sidebar: Top 10 List */
     .sidebar {
       width: 400px;
       background: white;
@@ -65,7 +60,6 @@
       padding-bottom: 10px;
     }
 
-    /* List Cards */
     .museum-card {
       background: #f9f9f9;
       border: 1px solid #eee;
@@ -101,7 +95,6 @@
       line-height: 1.4;
     }
 
-    /* Map Window */
     .map-container {
       flex: 1;
       position: relative;
@@ -111,164 +104,65 @@
       width: 100%;
     }
 
-    /* Leaflet Popup Styling */
     .popup-card h3 { margin: 0 0 5px 0; color: #2c4c3b; font-size: 15px; }
     .popup-card p { margin: 0 0 10px 0; font-size: 12px; color: #333; }
-    .popup-card a { color: #b75d3c; text-decoration: none; font-weight: bold; }
+    .popup-card a { color: #b75d3c; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 5px; }
   </style>
 </head>
 <body>
 
-  <!-- Website Header -->
   <header>
     <h1>The Great Model Railroad Database</h1>
-    <p>A curated map of the top miniature rail displays across the United States.</p>
+    <p>A curated interactive map of the top 30 miniature rail displays across the United States.</p>
   </header>
 
-  <!-- Split Dashboard Layout -->
   <div class="dashboard">
-    
-    <!-- Sidebar / Top 10 List -->
     <div class="sidebar">
-      <h2>The Top 10 Must-See Layouts</h2>
-      <div id="top-10-list">
-        <!-- Javascript will inject the cards here automatically -->
+      <h2>The Top 30 Masterpieces</h2>
+      <div id="museum-list">
+        <!-- Javascript injects all 30 cards here -->
       </div>
     </div>
 
-    <!-- Map Window -->
     <div class="map-container">
       <div id="map"></div>
     </div>
-
   </div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   
   <script>
-    // 1. Initialize Map
     var map = L.map('map').setView([39.8283, -98.5795], 4);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 18
     }).addTo(map);
 
-    // 2. Data List (Add your own image URLs to the "img" fields below!)
     var museums = [
-      {
-        name: "San Diego Model Railroad Museum",
-        lat: 32.7313, lng: -117.1480,
-        desc: "27,000 sq. ft. of incredibly detailed HO and N scale layouts modeling historic California rail lines.",
-        link: "https://www.sdmrm.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=San+Diego+Museum" 
-      },
-      {
-        name: "Golden State Model Railroad Museum",
-        lat: 37.9255, lng: -122.3812,
-        desc: "A massive 10,000-square-foot facility featuring functioning models of classic California railroad eras.",
-        link: "https://www.gsmrm.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Golden+State+Museum"
-      },
-      {
-        name: "Pasadena Model Railroad Museum",
-        lat: 34.0298, lng: -118.1517,
-        desc: "Home to the 'Sierra Pacific Lines,' one of the largest operating HO scale model railroads in the world.",
-        link: "https://www.pmrrc.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Pasadena+Museum"
-      },
-      {
-        name: "Colorado Model Railroad Museum",
-        lat: 40.4243, lng: -104.6881,
-        desc: "A 5,500 sq. ft. masterpiece featuring a floor-to-ceiling mountainous logging layout.",
-        link: "https://www.cmrm.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Colorado+Museum"
-      },
-      {
-        name: "Museum of Science and Industry",
-        lat: 41.7905, lng: -87.5830,
-        desc: "Home to 'The Great Train Story' depicting the winding rail journey between Seattle and Chicago.",
-        link: "https://www.msichicago.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Great+Train+Story"
-      },
-      {
-        name: "EnterTRAINment Junction",
-        lat: 39.3400, lng: -84.3980,
-        desc: "Boasts a staggering 25,000-square-foot G-scale layout and interactive walking paths.",
-        link: "https://entertrainmentjunction.com",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=EnterTRAINment"
-      },
-      {
-        name: "Twin City Model Railroad Museum",
-        lat: 44.9655, lng: -93.1865,
-        desc: "An O-scale layout packed with recognizable local landmarks and historical accuracy from the 1930s.",
-        link: "https://www.tcmrm.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Twin+City+Museum"
-      },
-      {
-        name: "Cornerfield Model Railroad Museum",
-        lat: 41.5173, lng: -81.0454,
-        desc: "One of the largest family-owned O-Gauge layouts in America featuring beautifully crafted rolling hills.",
-        link: "https://cornerfieldmodelrailroadmuseumandhobby.com",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Cornerfield+Museum"
-      },
-      {
-        name: "Northlandz",
-        lat: 40.5284, lng: -74.8876,
-        desc: "Features 8 miles of miniature track and towering canyon bridges that reach up to three stories high.",
-        link: "https://northlandz.com",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Northlandz"
-      },
-      {
-        name: "Carnegie Science Center",
-        lat: 40.4457, lng: -80.0177,
-        desc: "Houses the 'Miniature Railroad & Village,' perfectly capturing Western Pennsylvania in the late 1800s.",
-        link: "https://carnegiesciencecenter.org",
-        img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Carnegie+Science"
-      }
-      // Note: You can paste the remaining 20 locations from the previous code here! 
-      // They will appear on the map, but only the first 10 will render in the sidebar.
-    ];
-
-    // Store map markers so the sidebar can trigger them
-    var markers = [];
-
-    // 3. Build the Map Pins and Sidebar Cards
-    var sidebarContainer = document.getElementById('top-10-list');
-
-    museums.forEach(function(museum, index) {
-      // Build Map Popup
-      var popupHTML = "<div class='popup-card'>" +
-                      "<h3>" + museum.name + "</h3>" +
-                      "<p>" + museum.desc + "</p>" +
-                      "<a href='" + museum.link + "' target='_blank'>Visit Website &rarr;</a>" +
-                      "</div>";
-      
-      // Create Marker
-      var marker = L.marker([museum.lat, museum.lng]).addTo(map).bindPopup(popupHTML);
-      markers.push(marker);
-
-      // Build Sidebar Card (Only for the first 10)
-      if(index < 10) {
-        var cardHTML = `
-          <div class="museum-card" onclick="focusMap(${index})">
-            <img src="${museum.img}" alt="${museum.name}" class="card-img">
-            <div class="card-content">
-              <h3>${index + 1}. ${museum.name}</h3>
-              <p>${museum.desc}</p>
-            </div>
-          </div>
-        `;
-        sidebarContainer.innerHTML += cardHTML;
-      }
-    });
-
-    // 4. Function to pan the map when a sidebar card is clicked
-    function focusMap(index) {
-      var targetMarker = markers[index];
-      map.setView(targetMarker.getLatLng(), 12); // Zoom in on location
-      targetMarker.openPopup();
-    }
-  </script>
-</body>
-</html>
+      { name: "San Diego Model Railroad Museum", lat: 32.7313, lng: -117.1480, desc: "27,000 sq. ft. of incredibly detailed HO and N scale layouts modeling historic California rail lines.", link: "https://www.sdmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=San+Diego+Museum" },
+      { name: "Golden State Model Railroad Museum", lat: 37.9255, lng: -122.3812, desc: "A massive 10,000-square-foot facility featuring functioning models of classic California railroad eras.", link: "https://www.gsmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Golden+State+Museum" },
+      { name: "Pasadena Model Railroad Museum", lat: 34.0298, lng: -118.1517, desc: "Home to the 'Sierra Pacific Lines,' one of the largest operating HO scale model railroads in the world.", link: "https://www.pmrrc.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Pasadena+Museum" },
+      { name: "Colorado Model Railroad Museum", lat: 40.4243, lng: -104.6881, desc: "A 5,500 sq. ft. masterpiece featuring a floor-to-ceiling mountainous logging layout.", link: "https://www.cmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Colorado+Museum" },
+      { name: "Museum of Science and Industry", lat: 41.7905, lng: -87.5830, desc: "Home to 'The Great Train Story' depicting the winding rail journey between Seattle and Chicago.", link: "https://www.msichicago.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=MSI+Chicago" },
+      { name: "EnterTRAINment Junction", lat: 39.3400, lng: -84.3980, desc: "Boasts a staggering 25,000-square-foot G-scale layout and interactive walking paths.", link: "https://entertrainmentjunction.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=EnterTRAINment" },
+      { name: "Twin City Model Railroad Museum", lat: 44.9655, lng: -93.1865, desc: "An O-scale layout packed with recognizable local landmarks and historical accuracy from the 1930s.", link: "https://www.tcmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Twin+City+Museum" },
+      { name: "Cornerfield Model Railroad Museum", lat: 41.5173, lng: -81.0454, desc: "One of the largest family-owned O-Gauge layouts in America featuring beautifully crafted rolling hills.", link: "https://cornerfieldmodelrailroadmuseumandhobby.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Cornerfield" },
+      { name: "Northlandz", lat: 40.5284, lng: -74.8876, desc: "Features 8 miles of miniature track and towering canyon bridges that reach up to three stories high.", link: "https://northlandz.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Northlandz" },
+      { name: "Carnegie Science Center", lat: 40.4457, lng: -80.0177, desc: "Houses the 'Miniature Railroad & Village,' perfectly capturing Western Pennsylvania in the late 1800s.", link: "https://carnegiesciencecenter.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Carnegie+Science" },
+      { name: "Choo Choo Barn", lat: 39.9782, lng: -76.1666, desc: "A breathtakingly detailed, 1,700 sq. ft. handcrafted layout featuring 150 hand-built animated figures.", link: "https://www.choochoobarn.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Choo+Choo+Barn" },
+      { name: "National Toy Train Museum", lat: 39.9806, lng: -76.1557, desc: "Operated by the Train Collectors Association, it holds massive operating layouts and vintage collections.", link: "https://www.nttmuseum.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=National+Toy+Train" },
+      { name: "Bullthistle Model Railroad Museum", lat: 42.5312, lng: -75.5255, desc: "A regional gem featuring multiple scales (O, S, N, and HO) preserving New York's local rail history.", link: "https://www.bullthistlemuseum.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Bullthistle" },
+      { name: "TrainTastic", lat: 30.4072, lng: -89.0537, desc: "A new 50,000 sq. ft. facility featuring monumental, state-of-the-art interactive layouts.", link: "https://traintastic.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=TrainTastic" },
+      { name: "Smoky Mountain Trains Museum", lat: 35.4300, lng: -83.4475, desc: "Houses an operating layout alongside a jaw-dropping collection of over 7,000 vintage Lionel engines.", link: "https://www.gsmr.com/smoky-mountain-trains-museum/", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Smoky+Mountain" },
+      { name: "Foley Railroad Museum", lat: 30.4066, lng: -87.6811, desc: "Located in a historic 1909 depot, this massive O-gauge exhibit spans a quarter of a mile of track.", link: "https://visitfoley.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Foley+Railroad" },
+      { name: "Historic RailPark and Train Museum", lat: 37.0016, lng: -86.4428, desc: "Houses a phenomenal permanent HO-scale layout capturing local Kentucky rail history.", link: "https://www.historicrailpark.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Historic+RailPark" },
+      { name: "Ratcliffe Transportation Museum", lat: 37.0454, lng: -80.7788, desc: "Features an 80-by-26-foot O-scale model railroad meticulously recreating Pulaski in 1955.", link: "https://www.pulaskimuseums.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Ratcliffe+Museum" },
+      { name: "Mabank Depot", lat: 32.3687, lng: -96.1042, desc: "A charming preservation of Texas railroad history featuring excellent custom-built model layouts.", link: "https://www.mabanktexas.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Mabank+Depot" },
+      { name: "Rockledge Model Railroad Museum", lat: 28.3094, lng: -80.7350, desc: "Showcases highly intricate HO-scale models that capture the rugged terrain of the Appalachian regions.", link: "https://rockledgemrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Rockledge+Museum" },
+      { name: "Columbia Gorge Model Railroad Club", lat: 45.5539, lng: -122.6568, desc: "A breathtaking HO-scale layout that mirrors the topography of the Columbia River Gorge in the 1950s.", link: "https://www.cgmrc.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Columbia+Gorge" },
+      { name: "Washington State History Museum", lat: 47.2443, lng: -122.4385, desc: "Features an HO-scale layout recreating Washington's rail network with a massive Tacoma Union Station.", link: "https://www.washingtonhistory.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=WA+State+History" },
+      { name: "South Bay Historical Railroad Society", lat: 37.3533, lng: -121.9366, desc: "Located inside a historic 1862 depot featuring massive operating layouts preserving Santa Clara history.", link: "https://www.sbhrs.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=South+Bay+Historical" },
+      { name: "Chi-Town Union Station", lat: 42.5694, lng: -83.4862, desc: "One of the world’s largest O-scale layouts, featuring over 10,000 feet of track and massive architecture.", link: "https://www.chi-townunionstation.com", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Chi-Town+Union" },
+      { name: "National New York Central Railroad Museum", lat: 41.6818, lng: -85.9734, desc: "Houses detailed HO and O-scale layouts that recreate the bustling, historic rail yards of Elkhart.", link: "https://elkhartindiana.org/nnycrm/", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=NY+Central+Museum" },
+      { name: "Western PA Model Railroad Museum", lat: 40.6300, lng: -79.9430, desc: "Dedicated to a sprawling, hyper-accurate HO-scale representation of the B&O rail line frozen in 1952.", link: "https://wpmrm.org", img: "https://placehold.co/400x300/2c4c3b/ffffff?text=Western+PA+Museum" },
+      { name: "Medina Railroad Museum", lat: 43.2238, lng: -78.3846, desc: "Located inside a massive wooden freight depot boasting a colossal 2,040 sq. ft. HO-scale layout.", link: "
