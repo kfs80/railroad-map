@@ -4,25 +4,30 @@
 "name": "Foley Railroad Museum",
 "lat": 30.4066,
 "lng": -87.6811,
-"desc": "Located in a historic 1909 depot, this massive O-gauge exhibit spans a quarter of a mile of track.",
-"link": "https://visitfoley.com"
+"desc": "A 24 by 60 foot O-gauge layout built by the volunteer Caboose Club, housed in an annex to the restored 1909 L&N depot.",
+"link": "https://cityoffoley.org/foley-depot-museum-model-train-exhibit",
+"size": "24 x 60 ft (1,440 sq ft)",
+"hours": "Model train exhibit Tue, Thu and Sat, about 10 a.m.-2 p.m.; free (check the city site)"
 },
 {
 "state": "California",
 "name": "Golden State Model Railroad Museum",
-"lat": 37.9255,
-"lng": -122.3812,
+"lat": 37.9153,
+"lng": -122.3836,
 "desc": "A massive 10,000-square-foot facility featuring functioning models of classic California railroad eras.",
 "link": "https://www.gsmrm.org",
-"size": "10,000 sq ft across three layouts"
+"size": "10,000 sq ft across three layouts",
+"hours": "Sundays April-December, noon-5 p.m."
 },
 {
 "state": "California",
-"name": "Pasadena Model Railroad Club",
+"name": "Pasadena Model Railroad Museum",
 "lat": 34.0298,
 "lng": -118.1517,
-"desc": "Home to the 'Sierra Pacific Lines,' one of the largest operating HO scale model railroads in the world.",
-"link": "https://www.pmrrc.org"
+"desc": "Home of the Sierra Pacific Lines, a 70 by 72 foot HO layout. The club now operates in Los Angeles.",
+"link": "https://www.pmrrm.org/",
+"size": "70 x 72 ft (5,000 sq ft)",
+"hours": "Open to the public quarterly; next open house Nov 14-15, 2026"
 },
 {
 "state": "California",
@@ -37,8 +42,9 @@
 "name": "South Bay Historical Railroad Society",
 "lat": 37.3533,
 "lng": -121.9366,
-"desc": "Located inside a historic 1862 depot featuring massive operating layouts preserving Santa Clara history.",
-"link": "https://www.sbhrs.org"
+"desc": "Located inside the historic 1863 Santa Clara depot, with two operating HO and N scale layouts.",
+"link": "https://www.sbhrs.org",
+"hours": "Tue 5-8 p.m. and Sat 10 a.m.-4 p.m.; free"
 },
 {
 "state": "Colorado",
@@ -47,23 +53,26 @@
 "lng": -104.6881,
 "desc": "A 5,500 sq. ft. masterpiece featuring a floor-to-ceiling mountainous logging layout.",
 "link": "https://www.cmrm.org",
-"size": "5,500 sq ft"
+"size": "5,500 sq ft",
+"hours": "Thu-Mon, generally 10 a.m.-4 p.m. (Sun noon-4); closed Tue-Wed; check seasonal hours"
 },
 {
-"state": "Florida",
+"state": "Pennsylvania",
 "name": "Rockledge Model Railroad Museum",
-"lat": 28.3094,
-"lng": -80.735,
-"desc": "Showcases highly intricate HO-scale models that capture the rugged terrain of the Appalachian regions.",
-"link": "https://rockledgemrm.org"
+"lat": 40.0775,
+"lng": -75.0885,
+"desc": "A 3,000 sq ft HO layout with over 900 feet of track, recreating 1950s Pennsylvania and Reading rail lines. Home of the Gatsme Model Railroad Club (est. 1952).",
+"link": "https://rockledgemrm.org",
+"size": "3,000 sq ft; 900+ ft of track",
+"hours": "Second Saturday of each month, 12-3 p.m.; Toys for Tots free-admission days in Oct-Nov"
 },
 {
 "state": "Illinois",
-"name": "Museum of Science and Industry",
+"name": "Griffin Museum of Science and Industry",
 "lat": 41.7905,
 "lng": -87.583,
 "desc": "Home to 'The Great Train Story' depicting the winding rail journey between Seattle and Chicago.",
-"link": "https://www.msichicago.org",
+"link": "https://www.griffinmsi.org/",
 "size": "3,500 sq ft"
 },
 {
@@ -71,8 +80,9 @@
 "name": "National New York Central Railroad Museum",
 "lat": 41.6818,
 "lng": -85.9734,
-"desc": "Houses detailed HO and O-scale layouts that recreate the bustling, historic rail yards of Elkhart.",
-"link": "https://elkhartindiana.org/nnycrm/"
+"desc": "A New York Central history museum in a former freight house, with a model train room and outdoor rolling stock.",
+"link": "https://www.cityofelkhartin.gov/departments/national-new-york-central-railroad-museum/",
+"hours": "Wed-Sat, 10 a.m.-5 p.m."
 },
 {
 "state": "Kentucky",
@@ -80,23 +90,25 @@
 "lat": 37.0016,
 "lng": -86.4428,
 "desc": "Houses a phenomenal permanent HO-scale layout capturing local Kentucky rail history.",
-"link": "https://www.historicrailpark.com"
+"link": "https://www.historicrailpark.com",
+"hours": "Daily 10 a.m.-4 p.m. (Wed-Sun in Jan-Mar)"
 },
 {
 "state": "Maryland",
-"name": "B&O Railroad Museum",
+"name": "National Museum of Railroad History & Innovation (B&O Railroad Museum)",
 "lat": 39.2854,
 "lng": -76.6327,
 "desc": "Houses a massive HO-scale layout highlighting the engineering feats required to cross the Appalachians.",
-"link": "https://www.borail.org"
+"link": "https://nationalrailroad.org/"
 },
 {
 "state": "Massachusetts",
 "name": "Wenham Museum",
 "lat": 42.6074,
 "lng": -70.8931,
-"desc": "A staple of New England rail modeling featuring antique toy trains and intricate operating layouts.",
-"link": "https://www.wenhammuseum.org"
+"desc": "A children's and history museum whose Bennett E. Merry Train Gallery features 10 operating model layouts.",
+"link": "https://www.wenhammuseum.org",
+"hours": "Wed-Sat 9-4"
 },
 {
 "state": "Minnesota",
@@ -105,7 +117,8 @@
 "lng": -93.1865,
 "desc": "An O-scale layout packed with recognizable local landmarks and historical accuracy from the 1930s.",
 "link": "https://www.tcmrm.org",
-"size": "Nearly 14,000 sq ft of display space"
+"size": "11,000+ sq ft; includes a 30 x 50 ft O-scale layout",
+"hours": "Mon and Fri 10-3, Sat 10-2, Sun 10-5; Night Trains Sat 3-7 (seasonal)"
 },
 {
 "state": "Mississippi",
@@ -113,7 +126,8 @@
 "lat": 30.4072,
 "lng": -89.0537,
 "desc": "A massive 50,000 sq. ft. facility featuring monumental, state-of-the-art interactive layouts.",
-"link": "https://traintastic.com"
+"link": "https://traintastic.com",
+"hours": "Tue-Thu 10-4, Fri-Sat 10-5, Sun 1-5"
 },
 {
 "state": "Missouri",
@@ -121,7 +135,8 @@
 "lat": 38.5447,
 "lng": -91.0244,
 "desc": "One of the Midwest's premier model train attractions featuring massive, intricate N-scale and operating layouts.",
-"link": "https://www.ironspike.org"
+"link": "https://www.ironspike.org",
+"hours": "Wed-Thu 10-3, Fri 12-5, Sat 10-5, Sun 12-5; closed Mon-Tue"
 },
 {
 "state": "New Jersey",
@@ -130,7 +145,8 @@
 "lng": -74.8876,
 "desc": "Features 8 miles of miniature track and towering canyon bridges that reach up to three stories high.",
 "link": "https://northlandz.com",
-"size": "52,000 sq ft; 8+ miles of track"
+"size": "52,000 sq ft; 8+ miles of track",
+"hours": "Daily 10 a.m.-6 p.m."
 },
 {
 "state": "New York",
@@ -146,23 +162,27 @@
 "lat": 43.2238,
 "lng": -78.3846,
 "desc": "Located inside a massive wooden freight depot boasting a colossal 2,040 sq. ft. HO-scale layout.",
-"link": "https://medinarailroadmuseum.org"
+"link": "https://medinarailroadmuseum.org",
+"hours": "Thu-Sat 10-4:30, Sun 12-4:30"
 },
 {
 "state": "North Carolina",
 "name": "Apple Valley Model Railroad Club",
 "lat": 35.3207,
 "lng": -82.4571,
-"desc": "Housed inside a 1902 depot, featuring a massive 22x100-foot HO layout modeling western NC terrain.",
-"link": "https://www.avmrc.com"
+"desc": "A 22 by 100 foot operating HO layout inside the historic 1902 Hendersonville depot, modeling western North Carolina.",
+"link": "https://www.avmrc.com",
+"size": "22 x 100 ft (2,200 sq ft)",
+"hours": "Verify before visiting: the club website was last updated in 2020"
 },
 {
 "state": "North Carolina",
 "name": "Smoky Mountain Trains Museum",
 "lat": 35.43,
 "lng": -83.4475,
-"desc": "Houses an operating layout alongside a collection of over 7,000 vintage Lionel engines.",
-"link": "https://www.gsmr.com/smoky-mountain-trains-museum/"
+"desc": "An operating layout plus about 7,000 Lionel engines, cars and accessories, at the Great Smoky Mountains Railroad depot.",
+"link": "https://gsmr.com/museum/",
+"hours": "Free with a train ticket; otherwise $9 adults, $5 ages 3-11"
 },
 {
 "state": "Ohio",
@@ -174,11 +194,12 @@
 },
 {
 "state": "Oregon",
-"name": "Columbia Gorge Model Railroad Club",
-"lat": 45.5539,
-"lng": -122.6568,
+"name": "Columbia Gorge Model Railroad Historical Society",
+"lat": 45.5405,
+"lng": -122.6679,
 "desc": "A breathtaking HO-scale layout that mirrors the topography of the Columbia River Gorge in the 1950s.",
-"link": "https://www.cgmrc.com"
+"link": "https://www.cgmrhs.org/",
+"hours": "Public shows in the fall; 2026 dates are Nov 14, 15, 21, 22, 28, 29 and Dec 5, 6 (timed tickets)"
 },
 {
 "state": "Oregon",
@@ -203,8 +224,9 @@
 "name": "Choo Choo Barn",
 "lat": 39.9782,
 "lng": -76.1666,
-"desc": "A breathtakingly detailed, 1,700 sq. ft. handcrafted layout featuring 150 hand-built animated figures.",
-"link": "https://www.choochoobarn.com"
+"desc": "A handcrafted 1,700 sq ft layout with 17 operating trains and more than 180 animated figures and vehicles.",
+"link": "https://www.choochoobarn.com",
+"hours": "Daily 10 a.m.-5 p.m."
 },
 {
 "state": "Pennsylvania",
@@ -219,32 +241,27 @@
 "name": "National Toy Train Museum",
 "lat": 39.9806,
 "lng": -76.1557,
-"desc": "Operated by the Train Collectors Association, holding massive operating layouts and vintage collections.",
-"link": "https://www.nttmuseum.org"
+"desc": "Run by the Train Collectors Association, with five operating layouts and toy trains dating from about 1840.",
+"link": "https://www.tcatrains.org/museum/"
 },
 {
 "state": "Pennsylvania",
 "name": "Western PA Model Railroad Museum",
 "lat": 40.63,
 "lng": -79.943,
-"desc": "Dedicated to a sprawling, hyper-accurate HO-scale representation of the B&O rail line frozen in 1952.",
-"link": "https://wpmrm.org"
-},
-{
-"state": "Texas",
-"name": "Mabank Depot",
-"lat": 32.3687,
-"lng": -96.1042,
-"desc": "A charming preservation of Texas railroad history featuring excellent custom-built model layouts.",
-"link": "https://www.mabanktexas.com"
+"desc": "A 40 by 100 foot representation of the B&O line between Pittsburgh and Cumberland, set in the summer of 1952.",
+"link": "https://wpmrm.org",
+"size": "40 x 100 ft (4,000 sq ft)",
+"hours": "Annual Holiday Train Display opens Nov 7, 2026 (mid-November to mid-January)"
 },
 {
 "state": "Texas",
 "name": "New Braunfels Railroad Museum",
 "lat": 29.7042,
 "lng": -98.125,
-"desc": "Features highly detailed HO and N-scale layouts alongside a viewing area for real-life Union Pacific trains.",
-"link": "https://newbraunfelsrailroadmuseum.org"
+"desc": "Four model railroad layouts in several scales inside a renovated 1907 depot, beside an active Union Pacific main line.",
+"link": "https://newbraunfelsrailroadmuseum.org",
+"hours": "Wed-Sun 10-4"
 },
 {
 "state": "Virginia",
@@ -269,7 +286,7 @@
 "lat": 34.0828,
 "lng": -117.7708,
 "desc": "A volunteer-run outdoor G-scale garden railroad on the LA County Fairgrounds, running trains across a 100 by 300 foot site that depicts California history.",
-"link": "http://fgrr.org/",
+"link": "https://fairplex.com/upcoming-events/fairplex-garden-railroad-dec-2026/",
 "size": "100 x 300 ft (about 30,000 sq ft)",
 "hours": "Free public run days the second Sunday of each month, 11 a.m.-4 p.m., weather permitting; also daily during the LA County Fair",
 "zoom": 15
@@ -290,7 +307,7 @@
 "lat": 43.3797,
 "lng": -70.4916,
 "desc": "An HO layout of the Maine Central Railroad built by Helen and Buz Beal and moved to a purpose-built hall in 2024, with over 500 rail cars and 200 switches.",
-"link": "https://trolleymuseum.org/",
+"link": "https://trolleymuseum.org/2025/02/06/maine-central-model-railroad-open-year-round/",
 "size": "1,640 sq ft; about 3,000 ft of track",
 "hours": "Open year-round; Thursday-Saturday in winter. Check the museum for current hours"
 },
